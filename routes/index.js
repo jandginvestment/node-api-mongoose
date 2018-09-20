@@ -10,8 +10,8 @@ var userRouter = require('./user-routes');
 
 
 routes.post('/authenticate', (req, res)=> {
-
- const tes = new user ('tees','test');
+console.error('.............')
+ const tes = new user ({name: "tees2" ,passWord:"test"});
 var token = jwt.sign(tes, app.get('superSecret'), {
           expiresIn : 60*60*24 // expires in 24 hours
         });
