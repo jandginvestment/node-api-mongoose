@@ -7,12 +7,13 @@ class user{
     }
 
     getAll(fun){
-        var persons=connection.executeSelect('CALL GetAllPersons()',(error,result)=>{
+    var persons=userModel.find({},(error,result)=>{
        fun(error,result);
         });
     }
 
     add(param, fun) {
+        console.log('param')
         console.log(param);
 
      var us = new userModel({
@@ -23,6 +24,10 @@ class user{
     });
 
         var result = us.save((error,result)=>{
+            console.log('errror');
+            console.log(error);
+            console.log('result');
+            console.log(result);
             fun(error,result);
         })
     }

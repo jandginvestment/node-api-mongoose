@@ -28,7 +28,7 @@ var token = jwt.sign(tes, app.get('superSecret'), {
 
 // route middleware to verify a token
 routes.use((req, res, next)=> {
-
+//console.log(req.headers);
   // check header or url parameters or post parameters for token
   var token = req.body.token || req.query.token || req.headers['x-access-token'];
 

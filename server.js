@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 app.set('superSecret', config.secret); 
 
 var port = process.env.PORT || 8040;        // set our port
+mongoose.Promise = global.Promise;
 
 mongoose.connect(config.database, {useMongoClient: true});
 
